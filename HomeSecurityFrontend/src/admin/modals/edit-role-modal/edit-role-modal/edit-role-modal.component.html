@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Role (admin, owner, tenant) </h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<div class="modal-body">
+  <form #editRoleForm="ngForm" class="card-form">
+    <div class="input">
+      <input matInput type="text" class="input-field" id="role" name="usernameModal" placeholder="Role" required />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Close
+  </button>
+  <button type="submit" class="btn btn-primary" name="saveChangesModal" (click)="saveUser()">
+    Confirm
+  </button>
+</div>

@@ -1,0 +1,98 @@
+<div class="form-style-10">
+  <h1>Generate key pair certificate</h1>
+  <form>
+      <div class="section"><span>1</span> Validity</div>
+      <div class="inner-wrap">
+          <label> Validity start <input id="startDate" type="date" name="field1" /></label>
+          <label> Validity end <input id="endDate" type="date" name="field2"/></label>
+      </div>
+  
+      <div class="section"><span>2</span>Name</div>
+      <div class="inner-wrap">
+          <label> Common name (CN) <input id="commonName" type="text" name="field3" /></label>
+          <label> Organization Unit (OU) <input id="organizationUnit" type="text" name="field4" /></label>
+          <label> Organization Name (O) <input id="organizationName" type="text" name="field3" /></label>
+          <label> Locality Name (L) <input id="localityName" type="text" name="field3" /></label>
+          <label> State Name (ST) <input id="stateName" type="text" name="field3" /></label>
+          <label> Country (C) <input id="country" type="text" name="field3" /></label>
+
+      </div>
+  
+      <div class="section"><span>3</span>Email</div>
+          <div class="inner-wrap">
+          <label> Email <input id="email" type="email" name="field5" /></label>
+      </div>
+
+      <div class="section"><span>4</span>Template</div>
+      <div class="inner-wrap">
+        <label> CA <input id="CA" type="radio" name="field5" value="CA" [checked]="true" (change)="templateChange('CA')" /></label>
+        <label> SSL Server <input id="SSLServer" type="radio" name="field5" value="SSLServer" (change)="templateChange('SSLServer')" /></label>
+        <label> SSL Client <input id="SSLClient" type="radio" name="field5" value="SSLClient" (change)="templateChange('SSLClient')" /></label>
+        <label> Code Signing <input id="CodeSigning" type="radio" name="field5" value="CodeSigning" (change)="templateChange('CodeSigning')" /></label>
+
+      </div>
+
+      <div *ngIf="template == 'CA'">
+        <div class="section"><span> 5 </span> Choose extensions (CA template)</div>
+        <div class="inner-wrap">
+            <label> Authority Key Identifier <input id="authorityKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Basic Constraints <input id="basicConstraints" type="checkbox" name="field1" checked/></label>
+            <label> Key Usage <input id="keyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Key Identifier <input id="subjectKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Extended Key Usage <input id="extendedKeyUsage" type="checkbox" name="field1"/></label>
+            <label> Subject Alternative Name <input id="subjectAlternativeName" type="checkbox" name="field1"/></label>
+        </div>
+        <div class="button-section">
+            <button type="button" name="Sign Up" (click)="submit()"> Submit </button>
+        </div>
+      </div>
+
+      <div *ngIf="template == 'SSLServer'">
+        <div class="section"><span> 5 </span> Choose extensions (SSL Server template) </div>
+        <div class="inner-wrap">
+            <label> Authority Key Identifier <input id="authorityKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Basic Constraints <input id="basicConstraints" type="checkbox" name="field1"/></label>
+            <label> Key Usage <input id="keyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Key Identifier <input id="subjectKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Extended Key Usage <input id="extendedKeyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Alternative Name <input id="subjectAlternativeName" type="checkbox" name="field1" checked/></label>
+
+        </div>
+        <div class="button-section">
+            <button type="button" name="Sign Up" (click)="submit()"> Submit </button>
+        </div>
+      </div>
+
+      <div *ngIf="template == 'SSLClient'">
+        <div class="section"><span> 5 </span> Choose extensions (SSL Client template) </div>
+        <div class="inner-wrap">
+            <label> Authority Key Identifier <input id="authorityKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Basic Constraints <input id="basicConstraints" type="checkbox" name="field1"/></label>
+            <label> Key Usage <input id="keyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Key Identifier <input id="subjectKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Extended Key Usage <input id="extendedKeyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Alternative Name <input id="subjectAlternativeName" type="checkbox" name="field1"/></label>
+
+        </div>
+        <div class="button-section">
+            <button type="button" name="Sign Up" (click)="submit()"> Submit </button>
+        </div>
+      </div>
+
+      <div *ngIf="template == 'CodeSigning'">
+        <div class="section"><span> 5 </span> Choose extensions (Code Signing template) </div>
+        <div class="inner-wrap">
+            <label> Authority Key Identifier <input id="authorityKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Basic Constraints <input id="basicConstraints" type="checkbox" name="field1"/></label>
+            <label> Key Usage <input id="keyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Key Identifier <input id="subjectKeyIdentifier" type="checkbox" name="field1" checked/></label>
+            <label> Extended Key Usage <input id="extendedKeyUsage" type="checkbox" name="field1" checked/></label>
+            <label> Subject Alternative Name <input id="subjectAlternativeName" type="checkbox" name="field1"/></label>
+
+        </div>
+        <div class="button-section">
+            <button type="button" name="Sign Up" (click)="submit()"> Submit </button>
+        </div>
+      </div>
+  </form>
+  </div>

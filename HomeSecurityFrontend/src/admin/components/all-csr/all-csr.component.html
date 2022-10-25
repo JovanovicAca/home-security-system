@@ -1,0 +1,32 @@
+<table>
+    <thead>
+      <tr>
+        <th>Organization Name</th>
+        <th>Common Name</th>
+        <th>Organization Unit</th>
+        <th>Locality Name</th>
+        <th>State Name</th>
+        <th>Country</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let csr of csrs">
+        <td><strong> {{ csr.organizationName }} </strong></td>
+        <td> {{ csr.commonName }} </td>
+        <td> {{ csr.organizationUnit }} </td>
+        <td> {{ csr.localityName }} </td>
+        <td> {{ csr.stateName }} </td>
+        <td> {{ csr.country }} </td>
+        <td> {{csr.startDate | date:'dd/MM/yyyy'}} </td>
+        <td> {{csr.endDate | date:'dd/MM/yyyy'}} </td>
+        <td> {{ csr.email }} </td>
+        <td> <button type="button" class="btn btn-success" (click)="accept(csr.id)"> ACCEPT </button> </td>
+        <td> <button type="button" class="btn btn-danger" (click)="decline(csr.id)"> DECLINE </button> </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add tenant</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+  <div class="modal-body">
+    <form #newUserForm="ngForm" class="card-form">
+      <div><br>
+        <label for="owners"> Owner: </label>
+        <select class="select" id="owners" (change)="selectChangeHandler($event)">
+            <option *ngFor="let user of users" [value]="user.id"> {{user.firstName}} {{user.lastName}} </option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Close
+    </button>
+    <button type="submit" class="btn btn-primary" name="saveChangesModal" (click)="saveChanges()"
+      [disabled]="!newUserForm.form.valid">
+      Save changes
+    </button>
+  </div>

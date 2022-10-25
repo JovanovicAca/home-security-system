@@ -1,0 +1,51 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">New User</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<div class="modal-body">
+  <form #newUserForm="ngForm" class="card-form">
+    <div class="input">
+      <input type="text" class="input-field" id="username" name="usernameModal" placeholder="Username" required
+        [(ngModel)]="newUser.username" />
+    </div>
+
+    <div class="input">
+      <input matInput type="text" class="input-field" id="name" name="nameModal" placeholder="First name" required
+        [(ngModel)]="newUser.firstName" />
+    </div>
+
+    <div class="input">
+      <input matInput type="text" class="input-field" id="lastName" name="lastNameModal" placeholder="Last name"
+        required [(ngModel)]="newUser.lastName" />
+    </div>
+
+    <div class="input">
+      <input matInput type="text" class="input-field" id="emailAddress" name="emailAddressModal" placeholder="Email"
+        required [(ngModel)]="newUser.email" />
+    </div>
+
+    <div class="input">
+      <input matInput type="text" class="input-field" name="roleModal" id="role"
+        placeholder="Role (admin, owner, tenant)" required [(ngModel)]="newUser.role" />
+    </div>
+
+    <div class="input">
+      <input matInput type="password" class="input-field" name="passwordModal" id="password" placeholder="Password"
+        required [(ngModel)]="newUser.password" />
+    </div>
+
+    <div class="input">
+      <input matInput type="password" class="input-field" name="password2Modal" id="password2"
+        placeholder="Confirm password" required />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Close
+  </button>
+  <button type="submit" class="btn btn-primary" name="saveChangesModal" (click)="saveUser()"
+    [disabled]="!newUserForm.form.valid">
+    Register
+  </button>
+</div>

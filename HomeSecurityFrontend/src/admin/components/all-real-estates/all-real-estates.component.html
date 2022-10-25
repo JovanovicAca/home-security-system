@@ -1,0 +1,16 @@
+<button type="button" class="btn btn-success" (click)="openAddModal()"> ADD REAL ESTATE </button>
+<div class="row card-group">
+    <div class="col-3" *ngFor="let realEstate of realEstates">
+        <div class="container">
+            <div class="property-card">
+                <button type="button" (click)="openModal(realEstate)">
+                    <div class="property-image">
+                    </div>
+                    </button>
+                    <div class="property-description">
+                    <h5>  {{ realEstate.name }} </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

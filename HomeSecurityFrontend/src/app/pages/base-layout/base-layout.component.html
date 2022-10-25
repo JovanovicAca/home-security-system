@@ -1,0 +1,6 @@
+<app-navbar-admin *ngIf="currentRole === 'ROLE_ADMIN'"></app-navbar-admin>
+<app-navbar-owner *ngIf="currentRole === 'ROLE_OWNER'"></app-navbar-owner>
+<div class="container">
+    <br><br>
+    <router-outlet></router-outlet>
+</div>

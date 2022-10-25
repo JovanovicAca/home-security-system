@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {
+  margin: 60px 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin: 20px 0px;
+  min-height: 260px;
+  min-width: 200px;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.decline {
+  background-color: #f44336;
+  border-color: #f44336;
+  cursor: pointer;
+  border-radius: 4px
+}
+
+img {
+  padding: 5px;
+  width: 140px;
+}
+
+.button {
+  width: 93px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 12px;
+}
+
+.card-body {
+  position: absolute;
+  height: 40%;
+  width: 50;
+  margin: 0px 20px 20px 360px;
+}

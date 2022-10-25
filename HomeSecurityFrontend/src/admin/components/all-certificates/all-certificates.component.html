@@ -1,0 +1,33 @@
+<div class="row">
+  <div *ngFor="let certificate of certificates" class="card bg-light mb-3" style="border-radius: 60px;">
+    <img src="../../../assets/images/badge.png" alt="badge"><br>
+    <div class="card-body">
+      <b>Common name:</b> {{ certificate.commonName }}, <b>Organization:</b> {{ certificate.organizationUnit }},
+      <b>Location:</b> {{
+      certificate.localityName }}<br>,
+      <b>State:</b> {{ certificate.stateName }}, <b>Country:</b> {{ certificate.country }}, <b>Email:</b> {{
+      certificate.email }}
+      <br><br>
+      <b>Expiry date: </b> {{ certificate.endDate.getDate().toString() + "-" + (certificate.endDate.getMonth() +
+      1).toString()
+      + "-" +
+      certificate.endDate.getFullYear().toString() }}
+      <br><br>
+      <div *ngIf="certificate.valid == true" style="color: green;">
+        <b>VALID</b>
+      </div>
+      <div *ngIf="certificate.valid == false" style="color: red;">
+        <b>INVALID</b>
+      </div>
+      <br>
+      <mat-label><b>Send reason:</b><input #reason id="reasonRevoke" type="text" name="reasonRevoke" /></mat-label>
+      <br>
+      <br>
+      <div class="button-div">
+        <button type="button" class="btn btn-danger"
+          (click)="revoke(certificate.serialNumber,reason.value, certificate.email)">
+          REVOKE </button>
+      </div>
+    </div>
+  </div>
+</div>

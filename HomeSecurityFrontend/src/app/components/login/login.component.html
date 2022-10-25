@@ -1,0 +1,17 @@
+<body>
+	<div class="main">
+		<!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
+
+		<div class="signup">
+			<form #loginForm="ngForm">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input matInput type="username" name="username" placeholder="Username" id="username" required
+					class="form-control" [(ngModel)]="login.username">
+				<input matInput type="password" name="password" placeholder="Password" id="password" required
+					class="form-control" [(ngModel)]="login.password">
+				<button type=" button" class="btn btn-success" (click)="onSubmit()"
+					[disabled]="!loginForm.form.valid">Login</button>
+			</form>
+		</div>
+	</div>
+</body>
